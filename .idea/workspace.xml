@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9e64798-3689-4b29-b424-23475f11cc66" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/order/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/tests/test_serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/tests/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/tests/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/tests/factories.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/tests/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/tests/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/tests/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/factories.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/tests/factories.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/tests/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/models/category.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models/category.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/models/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models/product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/tests/test_serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/tests/test_serializers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +54,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\bookstoreAPI\order\tests" />
+      <recent name="C:\bookstoreAPI\product\tests" />
       <recent name="C:\EBAC - Codigos\bookstore\product" />
     </key>
   </component>
