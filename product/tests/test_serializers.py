@@ -2,6 +2,7 @@ from rest_framework.test import APITestCase
 from product.models import Product, Category
 from product.serializers import ProductSerializer
 
+
 class ProductSerializerTest(APITestCase):
     def test_product_serialization(self):
         category = Category.objects.create(
@@ -24,9 +25,10 @@ class ProductSerializerTest(APITestCase):
         serializer = ProductSerializer(product)
         data = serializer.data
 
-        self.assertEqual(data['title'], 'Test Book')
-        self.assertEqual(data['description'], 'Test Description')
-        self.assertEqual(data['price'], 100)
-        self.assertEqual(data['active'], True)
-        self.assertEqual(len(data['category']), 1)
-        self.assertEqual(data['category'][0]['title'], 'Fiction')
+        # Verificações (Asserts)
+        self.assertEqual(data['title'], 'Test Book')  # Testa o campo 'title' de Product
+        self.assertEqual(data['description'], 'Test Description')  # Testa o campo 'description' de Product
+        self.assertEqual(data['price'], 100)  # Testa o campo 'price' de Product
+        self.assertEqual(data['active'], True)  # Testa o campo 'active' de Product
+        self.assertEqual(len(data['category']), 1)  # Testa a relação 'category' (ManyToMany) do Product
+        self.assertEqual(data['category'][0]['title'], 'Fiction')  # Testa o campo 'title' da Category associada
