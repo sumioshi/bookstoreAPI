@@ -6,7 +6,6 @@ from product.factories import CategoryFactory, ProductFactory
 from order.factories import UserFactory
 from product.models import Product
 
-
 class TestProductViewSet(APITestCase):
     client = APIClient()
 
@@ -43,3 +42,19 @@ class TestProductViewSet(APITestCase):
         created_product = Product.objects.get(title='notebook')
         self.assertEqual(created_product.title, 'notebook')
         self.assertEqual(created_product.price, 800.00)
+
+    def test_update_product(self):
+        data = {
+            'title': 'updated controller',
+            'price': 250.00,
+            'categories_id': []
+        }
+        response = self.client.put(
+            reverse('product-detail', kwargs={'version': 'v1', 'pk': self.product.pk}),
+            data=json.dumps(data),
+            content_type='application/json'
+        )
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.product.refresh_from_db()
+        self.assertEqual(self.product.title, 'updated controller')
+        self.assertEqual(self.product.price, 250.00)

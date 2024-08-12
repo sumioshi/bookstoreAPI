@@ -28,3 +28,15 @@ class OrderSerializer(serializers.ModelSerializer):
         for product in product_data:
             order.product.add(product)
         return order
+
+    def update(self, instance, validated_data):
+        product_data = validated_data.pop('products_id', None)
+
+        if product_data:
+            instance.product.clear()
+            for product in product_data:
+                instance.product.add(product)
+
+        instance.user = validated_data.get('user', instance.user)
+        instance.save()
+        return instance
