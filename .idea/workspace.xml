@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9e64798-3689-4b29-b424-23475f11cc66" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/order/tests/test_viewsets/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/tests/test_viewsets/test_order_viewset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/viewsets/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/viewsets/order_viewset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/tests/test_viewsets/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/tests/test_viewsets/test_category_viewset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/tests/test_viewsets/test_product_viewset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/viewsets/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/viewsets/category_viewset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/viewsets/product_viewset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/models/category.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models/category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/models/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models/product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/tests/test_serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/tests/test_serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/models/order.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/models/order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/serializers/order_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/serializers/order_serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/serializers/product_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/serializers/product_serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,13 +59,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/create-serializers",
-    "last_opened_file_path": "C:/bookstoreAPI"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/create-serializers&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/bookstoreAPI&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\bookstoreAPI\order\tests" />
