@@ -40,19 +40,32 @@ INSTALLED_APPS = [
     "product",
     "rest_framework",
     "django_extensions",
-    "debug_toolbar"
+    "debug_toolbar",
+    "rest_framework.authtoken",
 ]
 
 REST_FRAMEWORK = {
+    # Define a classe padrão de permissões.
+    # 'AllowAny' permite acesso irrestrito a todas as views da API.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
+
+    # Define as classes de autenticação padrão.
+    # 'SessionAuthentication' usa sessões de login e 'BasicAuthentication' utiliza autenticação básica HTTP.
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
+
+    # Define a classe de paginação padrão como 'PageNumberPagination',
+    # que utiliza números de página para navegação.
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+
+    # Define o número de itens por página.
+    # Aqui, a página retornará até 5 itens por vez.
+    'PAGE_SIZE': 5
 }
 
 MIDDLEWARE = [
