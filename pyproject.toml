@@ -10,9 +10,8 @@ python = "^3.12"
 pytest = "^8.3.2"
 factory-boy = "^3.3.0"
 django = "^5.1"
-djangorestframework = "^3.14.0"  # Adicione esta linha
+djangorestframework = "^3.14.0"
 pillow = "^9.0.0"
-django-rest-framework = "^0.1.0"
 django-extensions = "^3.2.3"
 django-debug-toolbar = "^4.4.6"
 
