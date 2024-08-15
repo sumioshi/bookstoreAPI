@@ -3,9 +3,9 @@ from product.models import Product, Category
 
 
 class CategoryFactory(factory.django.DjangoModelFactory):
-    title = factory.Faker('pystr')
-    slug = factory.Faker('pystr')
-    description = factory.Faker('pystr')
+    title = factory.Faker("pystr")
+    slug = factory.Faker("pystr")
+    description = factory.Faker("pystr")
     active = factory.Iterator([True, False])
 
     class Meta:
@@ -13,8 +13,8 @@ class CategoryFactory(factory.django.DjangoModelFactory):
 
 
 class ProductFactory(factory.django.DjangoModelFactory):
-    title = factory.Faker('pystr')
-    price = factory.Faker('pyint')
+    title = factory.Faker("pystr")
+    price = factory.Faker("pyint")
     category = factory.LazyAttribute(lambda o: CategoryFactory())
 
     @factory.post_generation
