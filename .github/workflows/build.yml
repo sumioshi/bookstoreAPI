@@ -13,7 +13,7 @@ jobs:
 
     services:
       db:
-        image: postgres:13
+        image: postgres:15.3-alpine  # Alinhado com o docker-compose.yml
         env:
           POSTGRES_USER: bookstore_dev
           POSTGRES_PASSWORD: bookstore_dev
@@ -24,7 +24,7 @@ jobs:
           --health-timeout=5s
           --health-retries=5
         ports:
-          - 5433:5432
+          - 5433:5432  # Alinhado com o mapeamento de portas no docker-compose.yml
 
     steps:
     - uses: actions/checkout@v2
@@ -34,25 +34,22 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Install poetry
-      run: |
-        python -m ensurepip
-        python -m pip install --upgrade pip
-        python -m pip install --upgrade poetry
-
     - name: Install dependencies
-      run: python -m poetry install
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install poetry
+        poetry install
 
     - name: Wait for DB
       run: |
-        until pg_isready -h db -p 5433; do
+        until pg_isready -h db -p 5432 -U bookstore_dev; do
           echo "Waiting for database..."
-          sleep 3
+          sleep 5
         done
 
     - name: Run migrations
       run: |
-        poetry run python manage.py migrate
+        poetry run python manage.py migrate --noinput
 
     - name: Run tests
       run: |
