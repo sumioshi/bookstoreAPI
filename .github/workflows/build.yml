@@ -22,7 +22,7 @@ jobs:
           --health-cmd="pg_isready -U bookstore_dev"
           --health-interval=10s
           --health-timeout=5s
-          --health-retries=5
+          --health-retries=10
         ports:
           - 5433:5432  # Alinhado com o mapeamento de portas no docker-compose.yml
 
@@ -42,9 +42,10 @@ jobs:
 
     - name: Wait for DB
       run: |
-        until pg_isready -h db -p 5432 -U bookstore_dev; do
+        for i in {1..20}; do
+          pg_isready -h db -p 5432 -U bookstore_dev && break
           echo "Waiting for database..."
-          sleep 5
+          sleep 3
         done
 
     - name: Run migrations
