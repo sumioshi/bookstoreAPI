@@ -7,7 +7,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.12]  # Utilize a versão correta do Python
+        python-version: [3.12]  # Certifique-se de que a versão do Python seja suportada
 
     runs-on: ubuntu-latest
 
@@ -42,6 +42,13 @@ jobs:
 
     - name: Install dependencies
       run: python -m poetry install
+
+    - name: Wait for DB
+      run: |
+        until pg_isready -h db -p 5432; do
+          echo "Waiting for database..."
+          sleep 3
+        done
 
     - name: Run migrations
       run: |
