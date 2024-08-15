@@ -7,24 +7,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.12]  # Certifique-se de que a versão do Python seja suportada
+        python-version: [3.12]
 
     runs-on: ubuntu-latest
-
-    services:
-      db:
-        image: postgres:13
-        env:
-          POSTGRES_USER: bookstore_dev
-          POSTGRES_PASSWORD: bookstore_dev
-          POSTGRES_DB: bookstore_dev_db
-        options: >-
-          --health-cmd="pg_isready -U bookstore_dev"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=5
-        ports:
-          - 5432:5432
 
     steps:
     - uses: actions/checkout@v2
@@ -39,21 +24,13 @@ jobs:
         python -m ensurepip
         python -m pip install --upgrade pip
         python -m pip install --upgrade poetry
+    - name: View poetry --help
+      run: poetry --help
 
     - name: Install dependencies
+      shell: bash
       run: python -m poetry install
 
-    - name: Wait for DB
-      run: |
-        until pg_isready -h localhost -p 5432 -U bookstore_dev; do
-          echo "Waiting for database..."
-          sleep 3
-        done
-
-    - name: Run migrations
-      run: |
-        poetry run python manage.py migrate
-
-    - name: Run tests
+    - name: Test
       run: |
         poetry run python manage.py test
