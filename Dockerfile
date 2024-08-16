@@ -62,9 +62,12 @@ RUN pip install poetry
 RUN poetry --version
 
 # install postgres dependencies inside of Docker
-RUN apt-get update \
+RUN apt-get update && apt-get install -y locales \
     && apt-get -y install libpq-dev gcc \
-    && pip install psycopg2
+    && pip install psycopg2 \
+    && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
+    && locale-gen en_US.UTF-8 \
+    && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
 # Debug step: Check installed packages
 RUN pip list
@@ -95,3 +98,4 @@ RUN ls -al /app
 EXPOSE 8000
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
