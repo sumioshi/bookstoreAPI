@@ -5,6 +5,7 @@
       <set>
         <option value="$USER_HOME$/AppData/Local/pypoetry/Cache/virtualenvs/bookstore-cXs7tcEw-py3.12/Scripts/python.exe" />
         <option value="$USER_HOME$/AppData/Local/pypoetry/Cache/virtualenvs/bookstore--hM5F_uy-py3.12/Scripts/python.exe" />
+        <option value="$PROJECT_DIR$/.venv/Scripts/python.exe" />
       </set>
     </option>
   </component>

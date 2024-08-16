@@ -10,8 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
+import locale
+
+# Tente configurar a localidade para 'en_US.UTF-8'
+try:
+    locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+except locale.Error:
+    print("Localidade 'en_US.UTF-8' não suportada. Usando a localidade padrão.")
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-+-&kq2)#7w8@s#5q_xnm62u5m2+umm4+m59+yxy6w@46nycbw5"
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-+-&kq2)#7w8@s#5q_xnm62u5m2+umm4+m59+yxy6w@46nycbw5')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get("DEBUG", default=0))
@@ -95,12 +103,13 @@ WSGI_APPLICATION = "bookstore.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('SQL_DATABASE', 'bookstore_dev_db'),
-        'USER': os.getenv('SQL_USER', 'bookstore_dev'),
-        'PASSWORD': os.getenv('SQL_PASSWORD', 'bookstore_dev'),
-        'HOST': os.getenv('SQL_HOST', 'db'),
-        'PORT': os.getenv('SQL_PORT', '5432'),
+        'ENGINE': os.environ.get('SQL_ENGINE', 'django.db.backends.postgresql'),
+        'NAME': os.environ.get('SQL_DATABASE', 'bookstore_dev_db'),
+        'USER': os.environ.get('SQL_USER', 'bookstore_dev'),
+        'PASSWORD': os.environ.get('SQL_PASSWORD', 'bookstore_dev'),
+        'HOST': os.environ.get('SQL_HOST', 'db'),
+        'PORT': os.environ.get('SQL_PORT', '5432'),
+        'OPTIONS': {'client_encoding': 'LATIN1'}
     }
 }
 
@@ -148,3 +157,24 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'django_debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+
+
