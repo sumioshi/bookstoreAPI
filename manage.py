@@ -8,6 +8,7 @@ import django
 print("Default encoding:", sys.getdefaultencoding())
 print("Locale preferred encoding:", locale.getpreferredencoding())
 
+
 def main():
     """Run administrative tasks."""
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bookstore.settings")
