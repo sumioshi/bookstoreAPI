@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9e64798-3689-4b29-b424-23475f11cc66" name="Changes" comment="" />
+    <list default="true" id="f9e64798-3689-4b29-b424-23475f11cc66" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/DOCUMENTATION.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,21 +50,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Docker.Dockerfile python-base.executor": "Run",
-    "Makefile Target.check-py-mypy.executor": "Run",
-    "Makefile Target.format-isort.executor": "Run",
-    "Makefile Target.format-py.executor": "Run",
-    "Makefile Target.help.executor": "Run",
-    "Makefile Target.migrate.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "demo-github-actions",
-    "last_opened_file_path": "C:/bookstore",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Docker.Dockerfile python-base.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.check-py-mypy.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.format-isort.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.format-py.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.help.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.migrate.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;demo-github-actions&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/bookstore&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\bookstoreAPI\order\tests" />
